@@ -1,7 +1,12 @@
 import "./App.css";
+import PostContainer from "./components/PostContainer";
 
 function App() {
-    return <></>;
+  return (
+    <>
+      <PostContainer></PostContainer>
+    </>
+  );
 }
 
 export default App;
