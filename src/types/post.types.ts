@@ -1,5 +1,7 @@
+import type { Ref } from "react";
+
 export type PostType = {
-  id: number;
   title: string;
   url: string;
+  ref?: Ref<HTMLDivElement>;
 };

@@ -4,19 +4,17 @@ import type { SetStateAction } from "react";
 
 export default function fetchPosts({
   page,
-  posts,
   setPosts,
   setPage,
 }: {
   page: number;
-  posts: Array<PostType>;
   setPosts: (value: SetStateAction<PostType[]>) => void;
-  setPage: (value: SetStateAction<number>) => void;
+  setPage: (value: SetStateAction<1>) => void;
 }) {
+  if (page === 500) setPage(1);
   axios
     .get(`https://jsonplaceholder.typicode.com/photos?_limit=10&_page=${page}`)
     .then((res) => {
-      setPosts([...posts, ...res.data]);
-      setPage((prev) => prev + 1);
+      setPosts((prev) => [...prev, ...res.data]);
     });
 }
