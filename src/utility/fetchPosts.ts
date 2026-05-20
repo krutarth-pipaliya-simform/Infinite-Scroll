@@ -9,7 +9,7 @@ export default function fetchPosts({
 }: {
   page: number;
   setPosts: (value: SetStateAction<PostType[]>) => void;
-  setPage: (value: SetStateAction<1>) => void;
+  setPage: (value: SetStateAction<number>) => void;
 }) {
   if (page === 500) setPage(1);
   axios
